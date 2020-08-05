@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #ff0000;
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    background-image: url('./img/wave.png');
+    background-repeat: no-repeat;
+    color: #363636;
+    background-size: cover;
+}
+
+.container {
+    width: 1200px;
+    height: 100%;
+    position: relative;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo {
+    height: 75px;
+}
+
+header .logo img {
+    height: 100%;
+}
+
+header button {
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    display: none;
+}
+
+header img {
+    height: 100%;
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    float: left;
+}
+
+header nav ul li a {
+    height: 75px;
+    line-height: 75px;
+    color: #fff;
+    padding: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+header nav ul li a:hover{
+    border-bottom: 1px solid #fff;
+}
+
+header .cart {
+    height: 75px;
+    width: 75px;
+    padding: 20px;
+}
+
+header .cart img {
+    height: 100%;
+}
+
+.banner-section {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.banner-section .info-box h1 {
+    font-size: 60px;
+    margin-top: 150px;
+    text-shadow: 1px 1px 2px #fff;
+}
+
+.banner-section .price-box {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.banner-section button {
+    margin-top: 20px;
+    padding: 7px 25px;
+    border: 1px solid #363636;
+    border-radius: 5px;
+    background-color: transparent;
+    outline: none;
+}
+
+.banner-section .img-box {
+    text-align: center;
+    height: 450px;
+}
+
+.banner-section .img-box img {
+    height: 100%;
+}
+
+.footer-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin: 10px auto 0;
+    width: 70%;
+    float: right;
+}
+
+.footer-section .box {
+    height: 80px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 0 10px #0000007a;
+}
+
+.footer-section .box .thumbnail {
+    height: 100%;
+}
+
+.footer-section .box .thumbnail img {
+    height: 100px;
+    margin: -10px 0 0 -30px;
+}
+
+.footer-section .info-box {
+    width: 55%;
+}
+
+.footer-section .info-box h5 {
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.footer-section .info-box .stars img {
+    height: 10px;
+}
+
+.footer-section .info-box .price {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* animation */
+.animate {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animation-left {
+    animation-name: animating-left;
+    animation-timing-function: ease-out;
+}
+
+.animation-right {
+    animation-name: animating-right;
+    transform-origin: right bottom;
+}
+
+@keyframes animating-left {
+    0%{
+        transform: translate3d(-100%, 0, 0) skewX(30deg);
+        opacity: 0;
+    }
+    60%{
+        opacity: 1;
+        transform: skewX(-20deg);
+    }
+    80%{
+        transform: skewX(5deg);
+    }
+    100%{
+        transform: translateZ(0);
+    }
+}
+
+@keyframes animating-right {
+    0%{
+        transform: rotate(45deg);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+/* animation end */
+
+/* media screen 768 px*/
+@media screen and (max-width: 768px){
+    body {
+        background-position: -150px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .banner-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .banner-section .info-box h1 {
+        font-size: 50px;
+        margin-top: 100px;
+    }
+
+    .banner-section .info-box .price-box {
+        font-size: 26px;
+    }
+
+    .banner-section .info-box button {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    .banner-section .img-box {
+        height: 350px;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .footer-section .box .thumbnail img {
+        height: 90px;
+        margin: -10px 0 0 -20px;
+    }
+}
+/* media screen 768 px */
+
+@media screen and (max-width: 425px) {
+    body {
+        height: 100%;
+    }
+
+    .container {
+        overflow: hidden;
+    }
+    nav {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: 0.5s;
+        top: 200vh;
+        overflow: hidden;
+        z-index: 999;
+    }
+
+    nav.show{
+        top: 50px;
+    }
+
+    header .cart, header .logo {
+        height: 50px;
+        width: 50px;
+    }
+
+    header .cart {
+        padding: 10px;
+    }
+
+    header nav ul li {
+        float: none;
+    }
+
+    header nav ul li a {
+        width: 100%;
+        display: inline-block;
+    }
+
+    header button{
+        display: inline;
+    }
+
+    .banner-section {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-section .info-box {
+        text-align: center;
+    }
+
+    .banner-section .info-box h1 {
+        font-size: 30px;
+        margin-top: 30px;
+    }
+
+    .banner-section .info-box .price {
+        font-size: 16px;
+    }
+
+    .banner-section .img-box {
+        height: 250px;
+        padding-top: 20px;
+    }
+
+    .footer-section {
+        grid-gap: 20px;
+        margin: 10px auto;
+    }
+
+    .footer-section .box{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .footer-section .box .thumbnail img {
+        margin: -10px 0 0 0;
+    }
+
+    .footer-section .box .info-box {
+        text-align: center;
+        width: 100%;
+        padding:0 8px 5px;
+    }
+}
